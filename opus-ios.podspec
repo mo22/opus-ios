@@ -7,19 +7,23 @@ Pod::Spec.new do |s|
     s.summary = "libopus, libogg and libopusfile"
     s.source = { :git => "http://bitbucket.org/mm22/opus-ios" }
 
-    #s.preserve_paths = "libogg-1.3.2/include/*", "libogg-1.3.2/include/**/*"
-    #s.header_mappings_dir = 'libogg-1.3.2'
     s.header_mappings_dir = 'libogg-1.3.2/include'
-    # s.header_dir = 'libogg-1.3.2/include'
     s.source_files = 
         'libogg-1.3.2/include/ogg/*.h',
-        'libogg-1.3.2/src/*.{h,c}'
-    s.public_header_files = 'libogg-1.3.2/include/ogg/*.h'
+        'libogg-1.3.2/src/*.{h,c}',
+        'opusfile-0.7/include/*.h',
+        'opusfile-0.7/src/*.{h,c}',
+        'opus-1.1.4/{celt,silk,src}/*.{h,c}',
+        'opus-1.1.4/**/{arm,float,x86}/*.{h,c}',
+        'opus-1.1.4/include/*.h'
+
+    s.public_header_files =
+        'libogg-1.3.2/include/ogg/*.h',
+        'opusfile-0.7/include/*.h',
+        'opus-1.1.4/include/*.h'
+
     s.xcconfig = {
-        # 'USE_HEADERMAP' => 'NO',
-        # 'USER_HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/libogg-1.3.2/include/"',
         'GCC_PREPROCESSOR_DEFINITIONS' => 'HAVE_CONFIG_H=1',
-        # 'ALWAYS_SEARCH_USER_PATHS' => 'NO',
     }
 
 
