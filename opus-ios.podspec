@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'opus' do |sp|
-        sp.header_mappings_dir = 'opus-1.1.4'
+        sp.header_mappings_dir = 'opus-1.1.4/include'
         sp.source_files = 
             'opus-1.1.4/src/*.{h,c}',
             'opus-1.1.4/**/{arm,float,x86}/*.{h,c}',
