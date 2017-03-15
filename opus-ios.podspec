@@ -49,13 +49,39 @@ Pod::Spec.new do |s|
     #end
 
     s.subspec 'opus' do |sp|
-    #   "prepare_command": "cat >src/config.h <<CONFIG_H\n#define HAVE_DLFCN_H 1\n#define HAVE_INTTYPES_H 1\n#define HAVE_LRINT 1\n#define HAVE_LRINTF 1\n#define HAVE_MEMORY_H 1\n#define HAVE_STDINT_H 1\n#define HAVE_STDLIB_H 1\n#define HAVE_STRINGS_H 1\n#define HAVE_STRING_H 1\n#define HAVE_SYS_STAT_H 1\n#define HAVE_SYS_TYPES_H 1\n#define HAVE_UNISTD_H 1\n\n#define OPUS_BUILD /**/\n\n#define STDC_HEADERS 1\n#define VAR_ARRAYS 1\n\nCONFIG_H\n",
+
+        sp.prepare_command = <<-CMD
+            cat >opus-1.1.4/src/config.h <<CONFIG_H
+            #define HAVE_DLFCN_H 1
+            #define HAVE_INTTYPES_H 1
+            #define HAVE_LRINT 1
+            #define HAVE_LRINTF 1
+            #define HAVE_MEMORY_H 1
+            #define HAVE_STDINT_H 1
+            #define HAVE_STDLIB_H 1
+            #define HAVE_STRINGS_H 1
+            #define HAVE_STRING_H 1
+            #define HAVE_SYS_STAT_H 1
+            #define HAVE_SYS_TYPES_H 1
+            #define HAVE_UNISTD_H 1
+
+            #define OPUS_BUILD /**/
+
+            #define STDC_HEADERS 1
+            #define VAR_ARRAYS 1
+
+            CONFIG_H
+        CMD
+        # ",
+        # sed -i 's/MyNameSpacedHeader/Header/g' ./**/*.h
+        # sed -i 's/MyNameOtherSpacedHeader/OtherHeader/g' ./**/*.h
+
         # sp.xcconfig = {
         #     # 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
         #     'HEADER_SEARCH_PATHS' => '"/Users/mmoeller/workspace/opus-ios/opus-1.1.4/silk/"'
         # }
         sp.source_files = 
-            "opus-1.1.4/config.h",
+            "opus-1.1.4/src/config.h",
             "opus-1.1.4/include/*.h",
             "opus-1.1.4/silk/*.{c,h}",
             "opus-1.1.4/celt/*.{c,h}",
