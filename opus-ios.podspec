@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
     s.source = { :git => "http://bitbucket.org/mm22/opus-ios" }
 
     s.xcconfig = {
-        # 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
-        'HEADER_SEARCH_PATHS' => '"/Users/mmoeller/workspace/opus-ios/opus-1.1.4/silk/"'
+        'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
+        #'HEADER_SEARCH_PATHS' => '"/Users/mmoeller/workspace/opus-ios/opus-1.1.4/silk/"'
     }
     s.prepare_command = <<-CMD
         cat >opus-1.1.4/src/config.h <<CONFIG_H
