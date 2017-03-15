@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     s.public_header_files = 'libogg-1.3.2/include/ogg'
     s.xcconfig = {
         # 'USE_HEADERMAP' => 'NO',
-        # 'USER_HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/"',
+        'USER_HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/libogg-1.3.2/include/"',
         'GCC_PREPROCESSOR_DEFINITIONS' => 'HAVE_CONFIG_H=1',
         # 'ALWAYS_SEARCH_USER_PATHS' => 'NO',
     }
