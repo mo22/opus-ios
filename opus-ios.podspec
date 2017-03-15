@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = "opus-ios"
-    s.version = "0.0.1"
+    s.version = "0.0.2"
     s.license = { :type => "BSD" }
     s.homepage = "none"
     s.authors = { "Moritz Möller" => "mm@mxs.de" }
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
 
     s.xcconfig = {
         'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
-        #'HEADER_SEARCH_PATHS' => '"/Users/mmoeller/workspace/opus-ios/opus-1.1.4/silk/"'
     }
+
     s.prepare_command = <<-CMD
         cat >opus-1.1.4/src/config.h <<CONFIG_H
         #define HAVE_DLFCN_H 1
@@ -25,15 +25,11 @@ Pod::Spec.new do |s|
         #define HAVE_SYS_STAT_H 1
         #define HAVE_SYS_TYPES_H 1
         #define HAVE_UNISTD_H 1
-
         #define OPUS_BUILD /**/
-
         #define STDC_HEADERS 1
         #define VAR_ARRAYS 1
-
         CONFIG_H
     CMD
-
 
     s.subspec 'ogg' do |sp|
         sp.header_mappings_dir = 'libogg-1.3.2/include'
@@ -47,40 +43,7 @@ Pod::Spec.new do |s|
         sp.public_header_files = 'opusfile-0.7/include/*.h'
     end
 
-    #s.subspec 'silk' do |sp|
-    #    sp.header_mappings_dir = 'opus-1.1.4/silk'
-    #    sp.source_files = 'opus-1.1.4/silk/**/*.{h,c}'
-    #    sp.public_header_files = 'opus-1.1.4/silk/**/.h'
-    #end
-
-    #s.subspec 'celt' do |sp|
-    #    sp.header_mappings_dir = 'opus-1.1.4/celt'
-    #    sp.source_files = 'opus-1.1.4/celt/**/*.{h,c}'
-    #    sp.public_header_files = 'opus-1.1.4/celt/**/*.{h,c}'
-    #end
-
-    #s.subspec 'opus' do |sp|
-    #    sp.header_mappings_dir = 'opus-1.1.4/include'
-    #    sp.source_files = 
-    #        'opus-1.1.4/src/*.{h,c}',
-    #        'opus-1.1.4/**/{arm,float,x86}/*.{h,c}',
-    #        'opus-1.1.4/include/*.h'
-    #    sp.public_header_files = 'opus-1.1.4/include/*.h'
-    #    sp.xcconfig = {
-    #        'GCC_PREPROCESSOR_DEFINITIONS' => 'HAVE_CONFIG_H=1',
-    #    }
-    #end
-
     s.subspec 'opus' do |sp|
-
-        # ",
-        # sed -i 's/MyNameSpacedHeader/Header/g' ./**/*.h
-        # sed -i 's/MyNameOtherSpacedHeader/OtherHeader/g' ./**/*.h
-
-        # sp.xcconfig = {
-        #     # 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
-        #     'HEADER_SEARCH_PATHS' => '"/Users/mmoeller/workspace/opus-ios/opus-1.1.4/silk/"'
-        # }
         sp.source_files = 
             "opus-1.1.4/src/config.h",
             "opus-1.1.4/include/*.h",
@@ -112,7 +75,6 @@ Pod::Spec.new do |s|
             "-DHAVE_CONFIG_H=1",
             "-DFIXED_POINT"
     end
-
 
 end
 
