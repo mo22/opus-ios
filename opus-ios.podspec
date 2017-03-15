@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     #s.preserve_paths = "libogg-1.3.2/include/*", "libogg-1.3.2/include/**/*"
     #s.header_mappings_dir = 'libogg-1.3.2'
     #s.header_mappings_dir = 'libogg-1.3.2/include'
-    s.header_dir = 'libogg-1.3.2/include'
+    s.header_dir = './libogg-1.3.2/include/'
     s.source_files = 
         'libogg-1.3.2/include/ogg/*.h',
         'libogg-1.3.2/src/*.{h,c}'
