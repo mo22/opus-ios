@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
         'libogg-1.3.2/src/*.{h,c}'
     s.public_header_files = 'libogg-1.3.2/include/ogg/*.h'
     s.xcconfig = {
-        'USE_HEADERMAP' => 'NO',
-        'USER_HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/"',
+        # 'USE_HEADERMAP' => 'NO',
+        # 'USER_HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/"',
         'GCC_PREPROCESSOR_DEFINITIONS' => 'HAVE_CONFIG_H=1',
         # 'ALWAYS_SEARCH_USER_PATHS' => 'NO',
     }
