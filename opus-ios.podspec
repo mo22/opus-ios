@@ -19,18 +19,19 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'silk' do |sp|
-        #sp.header_mappings_dir = 'opus-1.1.4/silk'
+        sp.header_mappings_dir = 'opus-1.1.4/silk'
         sp.source_files = 'opus-1.1.4/silk/**/*.{h,c}'
         sp.public_header_files = 'opus-1.1.4/silk/**/.h'
     end
 
     s.subspec 'celt' do |sp|
-        #sp.header_mappings_dir = 'opus-1.1.4/celt'
+        sp.header_mappings_dir = 'opus-1.1.4/celt'
         sp.source_files = 'opus-1.1.4/celt/**/*.{h,c}'
-        sp.public_header_files = 'opus-1.1.4/celt/**/*.{h,c}'#, 'opus-1.1.4/celt/{entenc,entdec,entcode,laplace}.c'
+        sp.public_header_files = 'opus-1.1.4/celt/**/*.{h,c}'
     end
 
     s.subspec 'opus' do |sp|
+        sp.header_mappings_dir = 'opus-1.1.4'
         sp.source_files = 
             'opus-1.1.4/src/*.{h,c}',
             'opus-1.1.4/**/{arm,float,x86}/*.{h,c}',
