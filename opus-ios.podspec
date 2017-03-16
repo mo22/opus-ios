@@ -40,8 +40,8 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'opusfile' do |sp|
-        sp.header_mappings_dir = 'opusfile-0.7/include'
-        sp.source_files = 'opusfile-0.7/include/*.h', 'opusfile-0.7/src/*.c',
+        #sp.header_mappings_dir = 'opusfile-0.7/include'
+        sp.source_files = 'opusfile-0.7/include/*.h', 'opusfile-0.7/src/*.{c,h}',
         sp.public_header_files = 'opusfile-0.7/include/*.h'
     end
 
