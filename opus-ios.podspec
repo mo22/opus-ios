@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
 
     s.xcconfig = {
         #'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
-        'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/include" "${PODS_ROOT}/opus-ios/opus-1.1.4/silk" "${PODS_ROOT}/opus-ios/libogg-1.3.2/include"'
-        # "${PWD}/opus-1.1.4/silk" "${PWD}/libogg-1.3.2/include"'
+        #'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/include" "${PODS_ROOT}/opus-ios/opus-1.1.4/silk" "${PODS_ROOT}/opus-ios/libogg-1.3.2/include"'
+        'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/include" "${PODS_ROOT}/opus-ios/opus-1.1.4/silk" "${PODS_ROOT}/opus-ios/libogg-1.3.2/include" "${PWD}/opus-ios/opus-1.1.4/include" "${PWD}/opus-ios/opus-1.1.4/silk" "${PWD}/opus-ios/libogg-1.3.2/include"'
     }
 
     s.prepare_command = <<-CMD
