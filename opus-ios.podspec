@@ -9,9 +9,11 @@ Pod::Spec.new do |s|
 
     s.xcconfig = {
         'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
+        #'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk" "${PODS_ROOT}/opus-ios/libogg-1.3.2/include" "${PWD}/opus-1.1.4/silk" "${PWD}/libogg-1.3.2/include"'
     }
 
     s.prepare_command = <<-CMD
+        env
         cat >opus-1.1.4/src/config.h <<CONFIG_H
         #define HAVE_DLFCN_H 1
         #define HAVE_INTTYPES_H 1
@@ -39,7 +41,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'opusfile' do |sp|
         sp.header_mappings_dir = 'opusfile-0.7/include'
-        sp.source_files = 'opusfile-0.7/include/*.h', 'opusfile-0.7/src/*.{h,c}',
+        sp.source_files = 'opusfile-0.7/include/*.h', 'opusfile-0.7/src/*.c',
         sp.public_header_files = 'opusfile-0.7/include/*.h'
     end
 
