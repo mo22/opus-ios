@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
     }
 
     s.prepare_command = <<-CMD
-        env
         cat >opus-1.1.4/src/config.h <<CONFIG_H
         #define HAVE_DLFCN_H 1
         #define HAVE_INTTYPES_H 1
