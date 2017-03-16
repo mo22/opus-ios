@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.homepage = "none"
     s.authors = { "Moritz Möller" => "mm@mxs.de" }
     s.summary = "libopus, libogg and libopusfile"
-    s.source = { :git => "http://bitbucket.org/mm22/opus-ios" }
+    s.source = { :git => "https://github.com/mo22/opus-ios.git" }
 
     s.xcconfig = {
         'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/opus-ios/opus-1.1.4/silk"'
